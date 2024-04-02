@@ -1,0 +1,14 @@
+# ninja log v5
+3	373	7207189703429965	CMakeFiles/BigInteger.dir/main.cpp.obj	7436f4f506dc25ab
+7	631	7207189706027892	CMakeFiles/BigInteger.dir/BigInt.cpp.obj	a2b5ba348179b70b
+631	751	7207189707179723	BigInteger.exe	4ff51594adae43b6
+4	192	7207343835323271	build.ninja	99dc4c07109755dc
+10	493	7207183354574269	CMakeFiles/BigInteger.dir/BigIntArithmetic.cpp.obj	b0a02adfa5d024c4
+9	357	7207345473547617	CMakeFiles/BigInteger.dir/InvalidInputException.cpp.obj	811fbdf00a190029
+15	457	7207345474555212	CMakeFiles/BigInteger.dir/main.cpp.obj	7436f4f506dc25ab
+2	671	7207345476677198	CMakeFiles/BigInteger.dir/BigInt.cpp.obj	a2b5ba348179b70b
+671	894	7207345478889702	BigInteger.exe	dc5f27b664e59ea6
+2	321	7207345627410684	CMakeFiles/BigInteger.dir/main.cpp.obj	7436f4f506dc25ab
+321	414	7207345628314246	BigInteger.exe	dc5f27b664e59ea6
+3	395	7337360279616876	CMakeFiles/BigInteger.dir/main.cpp.obj	7436f4f506dc25ab
+396	757	7337360283188623	BigInteger.exe	dc5f27b664e59ea6

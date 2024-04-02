@@ -1,0 +1,84 @@
+  SECTION("String Constructor - Positive Number") {
+        BigInt bi("12345");
+        REQUIRE(bi.to_string() == "12345");
+    }
+
+    SECTION("String Constructor - Negative Number") {
+        BigInt bi("-54321");
+        REQUIRE(bi.to_string() == "54321");
+    }
+
+    SECTION("String Constructor - Leading Zeros") {
+        BigInt bi("00123");
+        REQUIRE(bi.to_string() == "123");
+    }
+
+    SECTION("String Constructor - Invalid Input") {
+        REQUIRE_THROWS_AS(BigInt("12a34"), InvalidInputException);
+        REQUIRE_THROWS_AS(BigInt("12 34"), InvalidInputException);
+    }
+
+    SECTION("Integer Constructor - Positive Number") {
+        BigInt bi(9876);
+        REQUIRE(bi.to_string() == "9876");//?
+    }
+
+
+
+required(VERSION 3.24)
+project(data_structures)
+
+set(CMAKE_CXX_STANDARD 20)
+
+Include(FetchContent)
+
+FetchContent_Declare(
+        Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG        v3.4.0 # or a later release
+)
+FetchContent_Declare(
+        spdlog
+        GIT_REPOSITORY https://github.com/gabime/spdlog.git
+        GIT_TAG v1.12.0
+)
+
+FetchContent_MakeAvailable(Catch2)
+FetchContent_MakeAvailable(spdlog)
+
+add_executable(BigInt
+        pain1/src/BigInt.h
+        pain1/src/BigInt.cpp
+        pain1/src/BigIntCore.cpp
+        pain1/src/BigIntInternal.cpp
+        pain1/src/BigIntIO.cpp
+        pain1/src/BigIntOperators.cpp
+        pain1/src/BigIntArithmetic.cpp
+        pain1/src/BigIntComparison.cpp
+        pain1/src/BigIntUtility.cpp
+        pain1/tests/test_constructors.cpp
+        pain1/tests/test_error_handling.cpp
+        pain1/tests/test_to_string.cpp
+        pain1/tests/test_performance.cpp
+        pain1/tests/test_io_operators.cpp
+        pain1/tests/test_normalization.cpp
+        pain1/tests/test_arithmetic_operations.cpp
+        pain1/tests/test_comparisons.cpp
+        pain1/tests/test_unary_operators.cpp
+        pain1/tests/test_arithmetic_across_types.cpp
+        pain1/tests/test_utility_functions.cpp
+        pain1/big_int_main.cpp
+)
+target_link_libraries(BigInt PRIVATE Catch2::Catch2WithMain)
+
+#Duplicate the following line for each oj problem where you want to use main provided by CodeWars
+#add_executable(oj1 oj/oj1.cpp)
+#target_include_directories(oj1
+#        PRIVATE ${PROJECT_SOURCE_DIR}/extra
+#        PRIVATE ${PROJECT_SOURCE_DIR}/extra/igloo
+#)
+#add_executable(oj19 oj/oj19.cpp)
+#target_include_directories(oj19
+#        PRIVATE ${PROJECT_SOURCE_DIR}/extra
+#        PRIVATE ${PROJECT_SOURCE_DIR}/extra/igloo
+#)
